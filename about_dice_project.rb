@@ -6,7 +6,7 @@ class DiceSet
   attr_reader :values
   def roll (quantity)
     @values = Array.new(quantity)
-    @values.each_with_index { |number,index| @values[index] =  1 + rand(6)}
+    @values.each_with_index {|number,index| @values[index] =  1 + rand(6)}
     return @values
   end
 end
