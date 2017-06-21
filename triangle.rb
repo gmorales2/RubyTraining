@@ -14,7 +14,12 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  triangle_sides = [a, b, c]
+  triangle_types = [:equilateral, :isosceles, :scalene]
+  sum = triangle_sides.inject(:+) / 2
+  its_ok = (sum - a) * (sum - b) * (sum - c)
+  raise TriangleError if triangle_sides.min <= 0 || its_ok <= 0
+  triangle_types[triangle_sides.uniq.count - 1]
 end
 
 # Error class used in part 2.  No need to change this code.
